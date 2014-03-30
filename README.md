@@ -44,10 +44,10 @@ Then, on the function PrincipalAxisGenerator::compute() add another switch case 
 When compute() is called the attribute vertexes contains the input list of vertex of the mesh.
 
 The following attributes of the class have to be filled with the proper data:
--center: Origin of the axis of the mesh
--axis1: X axis of the mesh
--axis2: Y axis of the mesh
--axis3: Z axis of the mesh
+- center: Origin of the axis of the mesh
+- axis1: X axis of the mesh
+- axis2: Y axis of the mesh
+- axis3: Z axis of the mesh
 
 Authors of the project
 ----------------------
