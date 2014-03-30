@@ -7,7 +7,7 @@ The aim of the project is to implement different algorithms to compute the axes 
 
 To do so it was found convenient to compare the alignments visually. A viewer that can display two methods next to each other was implemented to compare two methods easily.
 
-
+![Application screenshot](http://i.imgur.com/zVMJAoP.jpg)
 
 Dependencies
 -----------
@@ -53,3 +53,10 @@ Authors of the project
 
 - Quim Sanchez
 - Gerard Bahi
+
+Demo
+----
+
+https://www.youtube.com/watch?v=DhJbje2yzvg
+https://www.youtube.com/watch?v=V8jZxDHGpZQ
+https://www.youtube.com/watch?v=lrotzWoZglg
