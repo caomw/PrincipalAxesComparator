@@ -49,8 +49,8 @@ The following attributes of the class have to be filled with the proper data:
 - axis2: Y axis of the mesh
 - axis3: Z axis of the mesh
 
-Authors of the project
-----------------------
+Authors
+-------
 
 - Quim Sanchez
 - Gerard Bahi
