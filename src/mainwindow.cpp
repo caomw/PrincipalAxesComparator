@@ -275,6 +275,11 @@ void MainWindow::on_computeButton_clicked()
         }
     }
 
+    vector<Method> methods2compute;
+    //add them in the order of the tabs
+    methods2compute.push_back( JUST_PCA );
+    methods2compute.push_back( ROBUS_DETERMINATION );
+
     int progressIt=0;
 
     QProgressDialog progress;
@@ -289,6 +294,33 @@ void MainWindow::on_computeButton_clicked()
 
         generator.setMesh( leftWidgets[0]->getMesh(i) );
 
+        for( int j=0; j<methods2compute.size(); j++ ){
+
+            generator.setMethod( methods2compute.at(j) );//selecting method to generate axis
+
+            generator.start();//computing on other thread not to freeze the main window
+
+            while(generator.isRunning()){
+                //forcing window refresh events so the window not freezes during the wait
+                qApp->processEvents();
+                update();
+                repaint();
+                ui->centralWidget->repaint();
+            }
+            //tab position, 0 is the original tab
+            leftWidgets[j+1]->insert_mesh( leftWidgets[0]->getMesh(i),generator.getAxis() );
+            rightWidgets[j+1]->insert_mesh( rightWidgets[0]->getMesh(i),generator.getAxis() );
+
+            leftWidgets[j+1]->setMeshVisiblility( i,leftWidgets[0]->isMeshVisible(i) );
+            rightWidgets[j+1]->setMeshVisiblility( i,leftWidgets[0]->isMeshVisible(i) );
+
+
+            progressIt++;
+            progress.setValue( progressIt*100/(leftWidgets[0]->getNumberOfMeshes()*2) );
+            progress.update();
+        }
+        /*
+         //stating way, just for debuging
         generator.setMethod( JUST_PCA );//selecting method to generate axis
 
         generator.start();//computing on other thread not to freeze the main window
@@ -335,7 +367,7 @@ void MainWindow::on_computeButton_clicked()
         progressIt++;
         progress.setValue( progressIt*100/(leftWidgets[0]->getNumberOfMeshes()*2) );
         progress.update();
-
+        */
         //sleep(2);
     }
 
