@@ -14,6 +14,7 @@ Dependencies
 - Qt
 - OpenGL
 - OpenMesh
+- Eigen
 
 Install
 -------
@@ -57,6 +58,6 @@ Authors of the project
 Demo
 ----
 
-https://www.youtube.com/watch?v=DhJbje2yzvg
-https://www.youtube.com/watch?v=V8jZxDHGpZQ
-https://www.youtube.com/watch?v=lrotzWoZglg
+- https://www.youtube.com/watch?v=DhJbje2yzvg
+- https://www.youtube.com/watch?v=V8jZxDHGpZQ
+- https://www.youtube.com/watch?v=lrotzWoZglg
